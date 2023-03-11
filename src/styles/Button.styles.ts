@@ -8,7 +8,7 @@ const styles = {
             paddingHorizontal: 30,
             borderWidth: 1,
             borderRadius: 10,
-            borderColor: "blue",
+            borderColor: "gray",
         }
     }),
     focused: StyleSheet.create({
@@ -18,7 +18,7 @@ const styles = {
             paddingHorizontal: 30,
             borderWidth: 1,
             borderRadius: 10,
-            borderColor: "blue",
+            borderColor: "gray",
         }
     }),
 }
