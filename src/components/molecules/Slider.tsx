@@ -26,6 +26,7 @@ const Slider: FC<SliderProp> = ({ content }) => {
                 pagingEnabled
                 onMomentumScrollEnd={handlePageChange}
                 style={{ width: width, height: width }}
+                showsHorizontalScrollIndicator={false}
             >
                 {content.map((url, index) =>
                     <Image

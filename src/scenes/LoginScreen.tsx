@@ -1,8 +1,9 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { FC, useState } from "react";
-import { SafeAreaView, ScrollView } from "react-native";
+import { SafeAreaView, ScrollView, View } from "react-native";
 import Button from "../components/atoms/Button";
 import LoginFields from "../components/organisms/LoginFields";
+import Logo from "../assets/images/kompanion-logo.svg"
 import styles from "../styles/LoginScreen.styles";
 import { MainStackParamList } from "../utils/types";
 
@@ -21,6 +22,9 @@ const LoginScreen: FC<Prop> = ({ navigation, route }) => {
     return (
         <SafeAreaView style={styles.safeArea}>
             <ScrollView contentContainerStyle={styles.scrollView}>
+                <View style={{alignSelf: "center", width: "75%", aspectRatio: 1901/362}}>
+                    <Logo width="100%" height="100%" />
+                </View>
                 <LoginFields
                     user={user}
                     password={password}

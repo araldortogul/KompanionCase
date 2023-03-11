@@ -16,7 +16,7 @@ const LoginFields: FC<Prop> = ({ user, password, handleChangeUser, handleChangeP
     const toggleVisible = () => { setHidden((oldValue: boolean) => !oldValue) }
 
     return (
-        <View style={{ marginVertical: 20 }}>
+        <View style={{ marginVertical: 20, width: "90%" }}>
             <TextInput
                 placeholder="Phone number, username or email"
                 value={user}
