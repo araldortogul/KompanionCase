@@ -1,6 +1,7 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React, { FC } from "react";
-import { Button, FlatList, SafeAreaView, ScrollView } from "react-native";
+import { FlatList, SafeAreaView, View } from "react-native";
+import Header from "../components/organisms/Header";
 import PostPreview from "../components/organisms/PostPreview";
 import { MainStackParamList } from "../utils/types";
 
@@ -71,6 +72,8 @@ const FeedScreen: FC<Prop> = ({ navigation, route }) => {
                 renderItem={({ item }) => (
                     <PostPreview {...item} />
                 )}
+                windowSize={1}
+                ListHeaderComponent={<Header navigation={navigation} />}
             />
         </SafeAreaView>
     );

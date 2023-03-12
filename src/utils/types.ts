@@ -1,8 +1,8 @@
 export type MainStackParamList = {
   Login: undefined;
   Feed: undefined;
-  Search: undefined;
-};
+  Search: { query: string }
+}
 
 export interface SliderProp {
   content: string[]

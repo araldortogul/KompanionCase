@@ -7,14 +7,10 @@ interface ButtonProp extends TouchableOpacityProps {
     title: string
 }
 const Button: FC<ButtonProp> = ({title,  ...props }) => {
-    const [isFocused, setFocused] = useState<boolean>(false);
-
 
     return(
         <TouchableOpacity
-            style={isFocused ? styles.focused.container : styles.unfocused.container}
-            onPressIn={() => setFocused(true)}
-            onPressOut={() => setFocused(false)}
+            style={styles.container}
             {...props}
         >
             <Text>

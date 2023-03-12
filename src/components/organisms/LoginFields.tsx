@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { View } from "react-native";
 import styles from "../../styles/TextInput.styles";
-import TextInput from "../molecules/TextInput";
+import LoginInput from "../molecules/LoginInput";
 
 interface Prop {
     user: string
@@ -20,14 +20,14 @@ const LoginFields: FC<Prop> = ({ user, password, handleChangeUser, handleChangeP
             style={{ marginVertical: 20, width: "90%" }}
             testID="loginFields"
         >
-            <TextInput
+            <LoginInput
                 placeholder="Phone number, username or email"
                 value={user}
                 onChangeText={handleChangeUser}
                 style={styles.focused.container}
                 leftIcon="person"
             />
-            <TextInput
+            <LoginInput
                 placeholder="Password"
                 value={password}
                 onChangeText={handleChangePassword}

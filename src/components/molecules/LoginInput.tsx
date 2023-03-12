@@ -2,7 +2,7 @@ import React, { FC, useRef, useState } from "react";
 import { View, TextInput as Input, TextInputProps, TouchableWithoutFeedback } from "react-native";
 import styles from "../../styles/TextInput.styles";
 import Icon from 'react-native-vector-icons/Ionicons';
-
+import colors from "../../assets/colors";
 
 interface Prop extends TextInputProps {
     leftIcon?: string
@@ -11,10 +11,13 @@ interface Prop extends TextInputProps {
     onRightIconPress?: any
 }
 
-const TextInput: FC<Prop> = ({ leftIcon, rightIcon, onLeftIconPress, onRightIconPress, ...textInputProps }) => {
+const LoginInput: FC<Prop> = ({ leftIcon, rightIcon, onLeftIconPress, onRightIconPress, ...textInputProps }) => {
 
     const inputRef = useRef<Input>(null);
     const [isFocused, setFocused] = useState<boolean>(false);
+
+    const focus = () => { setFocused(true) };
+    const blur = () => { setFocused(false) };
 
     return (
         <TouchableWithoutFeedback onPress={() => { inputRef.current?.focus() }}>
@@ -26,12 +29,12 @@ const TextInput: FC<Prop> = ({ leftIcon, rightIcon, onLeftIconPress, onRightIcon
                         <Icon
                             name={leftIcon}
                             size={25}
-                            color={isFocused ? "black" : "gray"}
+                            color={isFocused ? colors.primary : colors.secondary}
                             style={{ marginRight: 5 }}
                         />}
                     <Input {...textInputProps}
-                        onFocus={() => setFocused(true)}
-                        onBlur={() => setFocused(false)}
+                        onFocus={focus}
+                        onBlur={blur}
                         style={{ borderWidth: 0 }}
                         ref={inputRef}
                     />
@@ -40,7 +43,7 @@ const TextInput: FC<Prop> = ({ leftIcon, rightIcon, onLeftIconPress, onRightIcon
                     <Icon
                         name={rightIcon}
                         size={25}
-                        color={isFocused ? "black" : "gray"}
+                        color={isFocused ? colors.primary : colors.secondary}
                         onPress={onRightIconPress}
                     />}
             </View>
@@ -48,4 +51,4 @@ const TextInput: FC<Prop> = ({ leftIcon, rightIcon, onLeftIconPress, onRightIcon
     );
 }
 
-export default TextInput;
+export default LoginInput;

@@ -23,7 +23,7 @@ const Video: FC<VideoProp> = ({ url }) => {
     return(
         <View style={{width: width, height: width}}>
         <VideoPlayer
-            source={require("../../scenes/earth.mp4")}
+            source={{uri: url}}
             repeat={true}
             disableBack
             disableSeekButtons

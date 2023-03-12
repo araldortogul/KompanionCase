@@ -1,26 +1,15 @@
 import { StyleSheet, ViewStyle } from "react-native";
+import colors from "../assets/colors";
 
-const styles = {
-    unfocused: StyleSheet.create({
-        container: {
-            alignSelf: "center",
-            paddingVertical: 5,
-            paddingHorizontal: 30,
-            borderWidth: 1,
-            borderRadius: 10,
-            borderColor: "gray",
-        }
-    }),
-    focused: StyleSheet.create({
-        container: {
-            alignSelf: "center",
-            paddingVertical: 5,
-            paddingHorizontal: 30,
-            borderWidth: 1,
-            borderRadius: 10,
-            borderColor: "gray",
-        }
-    }),
-}
+const styles = StyleSheet.create({
+    container: {
+        alignSelf: "center",
+        paddingVertical: 5,
+        paddingHorizontal: 30,
+        borderWidth: 1,
+        borderRadius: 10,
+        borderColor: colors.primary,
+    }
+})
 
 export default styles;
