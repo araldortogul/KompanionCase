@@ -34,6 +34,7 @@ const LoginScreen: FC<Prop> = ({ navigation, route }) => {
                 <Button
                     title="Log In"
                     onPress={handleLogin}
+                    testID="loginButton"
                 />
             </ScrollView>
         </SafeAreaView>
