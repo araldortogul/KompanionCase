@@ -7,7 +7,7 @@ const { height, width }: ScaledSize = Dimensions.get("window");
 
 const Slider: FC<SliderProp> = ({ content }) => {
 
-    const [active, setActive] = useState<number>(1);
+    const [active, setActive] = useState<number>(0);
 
     const handlePageChange = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
         const offset = event.nativeEvent.contentOffset;

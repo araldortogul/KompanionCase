@@ -6,6 +6,7 @@ import LoginFields from "../components/organisms/LoginFields";
 import Logo from "../assets/images/kompanion-logo.svg"
 import styles from "../styles/LoginScreen.styles";
 import { MainStackParamList } from "../utils/types";
+import Video from "react-native-video";
 
 type Prop = NativeStackScreenProps<MainStackParamList, "Login", "myStack">
 

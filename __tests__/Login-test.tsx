@@ -27,7 +27,7 @@ describe("Login Screen", () => {
         expect(props.navigation.push).toHaveBeenCalledWith("Feed");
     })
     it("should render username/email and password fields", async () => {
-        const loginFields = screen.root.findByType(LoginFields)
+        screen.root.findByType(LoginFields)
     })
 
 })

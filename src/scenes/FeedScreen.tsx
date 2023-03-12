@@ -6,12 +6,6 @@ import { MainStackParamList } from "../utils/types";
 
 type Prop = NativeStackScreenProps<MainStackParamList, "Feed", "myStack">
 
-const content = [
-    "https://i.pinimg.com/originals/46/98/71/469871bb72c9edf84af3f40669a1c610.jpg",
-    "https://i.pinimg.com/originals/46/98/71/469871bb72c9edf84af3f40669a1c610.jpg",
-    "https://i.pinimg.com/originals/46/98/71/469871bb72c9edf84af3f40669a1c610.jpg"
-]
-
 interface PostData {
     username: string
     date: string
@@ -55,10 +49,7 @@ const data: PostData[] = [
         date: "2023-03-11T20:57:29",
         likes: 5,
         comments: 7,
-        content: [
-            "https://lp-cms-production.imgix.net/features/2017/09/RS-shutterstock_314150237-2cae9a76a618.jpg",
-            "https://www.zuerich.com/sites/default/files/styles/1920_1244_focal_scale_crop/public/frontpage/web_zurich_viewport_scheffold-icon1_1600x900_03.jpg?h=1597416073"
-        ]
+        content: "http://techslides.com/demos/sample-videos/small.mp4"
     },
     {
         username: "user1",
