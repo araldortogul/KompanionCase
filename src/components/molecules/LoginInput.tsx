@@ -37,6 +37,8 @@ const LoginInput: FC<Prop> = ({ leftIcon, rightIcon, onLeftIconPress, onRightIco
                         onBlur={blur}
                         style={{ borderWidth: 0 }}
                         ref={inputRef}
+                        textAlign="left"
+                        cursorColor={colors.primary}
                     />
                 </View>
                 {rightIcon &&

@@ -10,6 +10,11 @@ export const mockAPI = () => {
 
     window.server = createServer({
         routes() {
+            this.post("/api/login", (schema, request) => {
+                return ({
+                    info: "success"
+                })
+            })
             this.get("/api/posts", () => {
                 return [
                     {

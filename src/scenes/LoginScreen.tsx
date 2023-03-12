@@ -6,6 +6,7 @@ import LoginFields from "../components/organisms/LoginFields";
 import Logo from "../assets/images/kompanion-logo.svg"
 import styles from "../styles/LoginScreen.styles";
 import { MainStackParamList } from "../utils/types";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type Prop = NativeStackScreenProps<MainStackParamList, "Login", "myStack">
 
@@ -17,12 +18,24 @@ const LoginScreen: FC<Prop> = ({ navigation, route }) => {
     const handleChangeUser = (text: string) => { setUser(text) };
     const handleChangePassword = (text: string) => { setPassword(text) };
 
-    const handleLogin = () => { navigation.push("Feed") };
+    const handleLogin = async () => {
+        const response = await fetch("/api/login",
+            {
+                method: "POST",
+                body: JSON.stringify({ user: user, password: password })
+            })
+
+        if (response.ok) {
+            await AsyncStorage.setItem('user', user)
+            await AsyncStorage.setItem('password', password)
+            navigation.push("Feed")
+        }
+    };
 
     return (
         <SafeAreaView style={styles.safeArea}>
             <ScrollView contentContainerStyle={styles.scrollView}>
-                <View style={{alignSelf: "center", width: "75%", aspectRatio: 1901/362}}>
+                <View style={{ alignSelf: "center", width: "75%", aspectRatio: 1901 / 362 }}>
                     <Logo width="100%" height="100%" />
                 </View>
                 <LoginFields
