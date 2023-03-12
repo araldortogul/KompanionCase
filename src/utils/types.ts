@@ -25,3 +25,11 @@ export interface CardHeaderProp {
 export interface PostPreviewProp extends CardFooterProp, CardMainContentProp, CardHeaderProp {
 
 }
+
+export interface PostData {
+  username: string
+  date: string
+  likes: number
+  comments: number
+  content: string[] | string
+}

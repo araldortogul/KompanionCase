@@ -1,24 +1,27 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { Dimensions, ScaledSize, View } from "react-native";
-import DefaultVideo, { VideoProperties } from "react-native-video";
-import VideoPlayer from 'react-native-media-console';
+import VideoPlayer, { VideoPlayerProps } from 'react-native-media-console';
 
 const { height, width }: ScaledSize = Dimensions.get("window");
 
+
 interface VideoProp {
     url: string
+    resizeMode?: ("contain" | "cover" | "none" | "stretch")
+    videoStyle?: VideoPlayerProps["videoStyle"]
+    containerStyle?: VideoPlayerProps["containerStyle"]
+    muted?: boolean
+    disableVolume?: boolean
 }
 
-const Video: FC<VideoProp> = ({ url }) => {
-
-    const [isFullScreen, setFullScreen] = useState<boolean>(false);
-
-    const enterFullScreen = () => {
-        console.log("entering full screen")
-        setFullScreen(true)};
-    const exitFullScreen = () => {
-        console.log("exiting full screen")
-        setFullScreen(false)};
+const Video: FC<VideoProp> = ({
+    url ,
+    resizeMode="contain",
+    videoStyle,
+    containerStyle,
+    muted=false,
+    disableVolume=false
+}) => {
 
     return(
         <View style={{width: width, height: width}}>
@@ -27,8 +30,11 @@ const Video: FC<VideoProp> = ({ url }) => {
             repeat={true}
             disableBack
             disableSeekButtons
-            onEnterFullscreen={enterFullScreen}
-            onExitFullscreen={exitFullScreen}
+            resizeMode={resizeMode}
+            videoStyle={videoStyle}
+            containerStyle={containerStyle}
+            disableVolume={disableVolume}
+            muted={muted}
         />
         </View>
     )

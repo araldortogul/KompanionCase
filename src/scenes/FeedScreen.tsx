@@ -1,19 +1,12 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React, { FC } from "react";
-import { FlatList, SafeAreaView, View } from "react-native";
+import { FlatList, SafeAreaView } from "react-native";
 import Header from "../components/organisms/Header";
 import PostPreview from "../components/organisms/PostPreview";
-import { MainStackParamList } from "../utils/types";
+import { MainStackParamList, PostData } from "../utils/types";
 
 type Prop = NativeStackScreenProps<MainStackParamList, "Feed", "myStack">
 
-interface PostData {
-    username: string
-    date: string
-    likes: number
-    comments: number
-    content: string[] | string
-}
 const data: PostData[] = [
     {
         username: "user1",
