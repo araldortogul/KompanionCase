@@ -19,7 +19,7 @@ const Header: FC<HeaderProp> = ({ navigation, query="" }) => {
     const handleGoBack = () => { navigation.pop() }
 
     return (
-        <View style={{ width: "100%", height: 70, backgroundColor: "#dedede", flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
+        <View style={{ width: "100%", height: 70, backgroundColor: "#88b04b", flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
             <Icon
                 name="chevron-back"
                 size={30}

@@ -3,6 +3,7 @@ import React, { FC, useEffect, useState } from "react";
 import { ActivityIndicator, FlatList, SafeAreaView } from "react-native";
 import Header from "../components/organisms/Header";
 import PostPreview from "../components/organisms/PostPreview";
+import styles from "../styles/ActivityIndicator.styles";
 import { MainStackParamList, PostData } from "../utils/types";
 
 type Prop = NativeStackScreenProps<MainStackParamList, "Feed", "myStack">
@@ -23,14 +24,14 @@ const FeedScreen: FC<Prop> = ({ navigation, route }) => {
     return (
         <SafeAreaView>
             {isLoading ?
-                <ActivityIndicator style={{ position: "absolute", top: 0, bottom: 0, left: 0, right: 0 }} />
+                <ActivityIndicator style={styles.container} />
             :
                 <FlatList
                     data={data}
                     renderItem={({ item }) => (
                         <PostPreview {...item} />
                     )}
-                    windowSize={1}
+                    windowSize={2}
                     ListHeaderComponent={<Header navigation={navigation} />}
                 />
             }

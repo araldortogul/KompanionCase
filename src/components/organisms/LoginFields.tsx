@@ -36,6 +36,7 @@ const LoginFields: FC<Prop> = ({ user, password, handleChangeUser, handleChangeP
                 leftIcon="lock-closed"
                 rightIcon={isHidden ? "eye-off" : "eye"}
                 onRightIconPress={toggleVisible}
+                
             />
         </View>
     )

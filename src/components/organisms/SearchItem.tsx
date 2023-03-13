@@ -8,7 +8,7 @@ const { height, width }: ScaledSize = Dimensions.get("window");
 const SearchItem: FC<PostData> = (postData) => {
 
     return (
-        <View style={{ flex: 1 / 3 }}>
+        <View style={{ width: width/3, height: width/3 }}>
             {
                 Array.isArray(postData.content) ?
                     <Image
@@ -20,6 +20,7 @@ const SearchItem: FC<PostData> = (postData) => {
                         url={postData.content}
                         resizeMode="cover"
                         containerStyle={{ flex: 1 / 3, aspectRatio: 1 }}
+                        videoStyle={{flex: 1 / 3, aspectRatio: 1}}
                         disableVolume={true}
                         muted={true}
                     />

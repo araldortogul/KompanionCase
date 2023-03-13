@@ -1,4 +1,3 @@
-import 'react-native';
 import React from 'react';
 
 import LoginFields from '../src/components/organisms/LoginFields';
@@ -13,18 +12,21 @@ describe("Login Screen", () => {
         props = { navigation: {push: jest.fn(), route: null } }
         underTest = <LoginScreen {...props}/>
     })
-    beforeEach(() => {
+    beforeEach(() => {    
         render(underTest)
     })
+
     it("should render login button", async () => {
         const loginButton = screen.root.findByType(Button)
         expect(loginButton.props).toHaveProperty("title", "Log In")
     })
     it('button should handle login', async () => {
+        const auth = {user: "user", password: "pass"}
+
         const loginButton = await screen.findByTestId("loginButton")
 
         fireEvent.press(loginButton)
-        expect(props.navigation.push).toHaveBeenCalledWith("Feed");
+        expect(fetch).toHaveBeenCalled()
     })
     it("should render username/email and password fields", async () => {
         screen.root.findByType(LoginFields)

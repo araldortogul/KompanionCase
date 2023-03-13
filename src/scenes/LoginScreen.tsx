@@ -29,6 +29,8 @@ const LoginScreen: FC<Prop> = ({ navigation, route }) => {
             await AsyncStorage.setItem('user', user)
             await AsyncStorage.setItem('password', password)
             navigation.push("Feed")
+        } else {
+            navigation.push("Search", {query: "asd"})
         }
     };
 

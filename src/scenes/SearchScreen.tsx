@@ -3,6 +3,7 @@ import { FC, useEffect, useState } from "react";
 import { ActivityIndicator, FlatList, SafeAreaView } from "react-native";
 import Header from "../components/organisms/Header";
 import SearchItem from "../components/organisms/SearchItem";
+import styles from "../styles/ActivityIndicator.styles";
 import { MainStackParamList, PostData } from "../utils/types";
 
 type Prop = NativeStackScreenProps<MainStackParamList, "Search", "myStack">
@@ -13,7 +14,7 @@ const SearchScreen: FC<Prop> = ({ navigation, route }) => {
     const [data, setData] = useState<PostData[]>([]);
 
     useEffect(() => {
-        fetch("/api/posts")
+        fetch("/api/search")
             .then((response) => response.json())
             .then((json) => { setData(json) })
             .catch((error) => console.log(error))
@@ -23,7 +24,7 @@ const SearchScreen: FC<Prop> = ({ navigation, route }) => {
     return (
         <SafeAreaView>
             {isLoading ?
-                <ActivityIndicator style={{ position: "absolute", top: 0, bottom: 0, left: 0, right: 0 }} />
+                <ActivityIndicator style={styles.container} />
             :
                 <FlatList
                     data={data}
