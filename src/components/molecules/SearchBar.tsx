@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { TextInput, TextInputProps, View } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
+import styles from "../../styles/SearchBar.styles";
 
 interface SearchBarProps extends TextInputProps {
     value: string
@@ -15,12 +16,12 @@ const SearchBar: FC<SearchBarProps> = ({
 }) => {
 
     return (
-        <View style={{ flexDirection: "row", alignItems: "center", borderWidth: 1, borderRadius: 10, backgroundColor: "#f0f0f0", width: "75%", paddingHorizontal: 5 }}>
-            <Icon name="search" size={24} onPress={onSearch} />
+        <View style={styles.container}>
+            <Icon name="search" size={24} onPress={onSearch} testID="search-button" />
             <TextInput
                 {...props}
                 placeholder={placeholder}
-                style={{ paddingLeft: 5, paddingVertical: 5, flexGrow: 1 }}
+                style={styles.textinput}
                 cursorColor="gray"
                 numberOfLines={1}
                 onSubmitEditing={onSearch}

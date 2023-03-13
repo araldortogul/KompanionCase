@@ -21,8 +21,6 @@ describe("Login Screen", () => {
         expect(loginButton.props).toHaveProperty("title", "Log In")
     })
     it('button should handle login', async () => {
-        const auth = {user: "user", password: "pass"}
-
         const loginButton = await screen.findByTestId("loginButton")
 
         fireEvent.press(loginButton)

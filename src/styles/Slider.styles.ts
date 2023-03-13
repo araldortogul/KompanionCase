@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
         margin: 3,
     },
     activeDot: {
-        color: "white",
+        color: "black",
         margin: 3,
     }
 })

@@ -19,12 +19,13 @@ const Header: FC<HeaderProp> = ({ navigation, query="" }) => {
     const handleGoBack = () => { navigation.pop() }
 
     return (
-        <View style={{ width: "100%", height: 70, backgroundColor: "#88b04b", flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
+        <View style={{ width: "100%", height: 70, backgroundColor: colors.primary, flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
             <Icon
                 name="chevron-back"
                 size={30}
                 style={{position: "absolute", left: 0, marginLeft: 10}}
                 onPress={handleGoBack}
+                testID="back-button"
             />
             <SearchBar value={searchQuery} onChangeText={onChangeQuery} onSearch={handleSearch} />
         </View>
